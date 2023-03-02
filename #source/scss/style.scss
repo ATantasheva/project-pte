@@ -157,6 +157,50 @@ $md4: 479.98; //мал смартфон
    flex: 0 1 75%;
    padding: 0px 0px 0px 30px;
 }
+//кнопки навигации
+.button {
+   border: 2px solid #000;
+   border-radius: 50%;
+   width: 55px;
+   height: 55px;
+   position: fixed;
+   z-index: 10;
+   bottom: 20px;
+   right: 20px;
+   background-color: rgb(145, 182, 145);
+   transition: all 0.3s ease 0s;
+&:hover {
+   background-color: rgb(126, 243, 126);
+}
+   &__navigation {
+   }
+
+   &__up {
+
+   }
+
+   &__plus {
+      bottom: 80px;
+   }
+
+   &__bookmark {
+      bottom: 140px;
+   }
+}
+.button-nav  {
+ 
+   img {
+      width: 30px;
+      height: 30px;
+      margin: 10px;
+   }
+}
+.up {
+}
+.plus {
+}
+.bookmark {
+}
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 @import "header.scss";
@@ -175,6 +219,10 @@ $md4: 479.98; //мал смартфон
    margin: 0px 0px 10px 0px;
 &_weight {
    font-weight: 700;
+   font-size: 15px;
+   text-align: left;
+   background: #e8e9ea;
+   margin: 0px 0px 10px 0px;
 }
    span {
       font-weight: 700;
@@ -272,6 +320,7 @@ margin: 0px 0px 20px 0px;
     height: 40px;
     padding-left:20px;
     font-size: 18px;
+      border: 1px solid #cacaca;
     &::placeholder {
       text-transform: uppercase;
       font-size: 16px;
@@ -306,7 +355,7 @@ margin: 0px 0px 0px 10px;
       font-weight: 700;
       text-transform: uppercase;
       line-height: 130%;
-      margin: 30px 0px 20px 0px;
+     padding: 30px 0px 20px 0px;
    }
    .order__title {
       font-size: 18px;

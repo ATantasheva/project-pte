@@ -1,0 +1,14 @@
+В  ПАПКЕ #SOURCE
+
+index.kit - в index.html
+ 
+ отдельно файлы - 
+ header footer popup forms menu-burger
+ у кажд файла свой файл стилей
+
+ файл ui.scss - для сборки одинаковых классов
+
+js.html - подключает скрипты
+
+main.js - скрипты для main
+script.js - стандартные скрипты 

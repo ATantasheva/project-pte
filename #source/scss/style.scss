@@ -1,0 +1,328 @@
+//<МИКСИНЫ>===============================================================================================
+@mixin anim($time, $delay) {
+   -webkit-transition: all $time ease $delay;
+   -moz-transition: all $time ease $delay;
+   -ms-transition: all $time ease $delay;
+   -o-transition: all $time ease $delay;
+   transition: all $time ease $delay;
+}
+
+@mixin anim_cubic($time, $delay) {
+   -webkit-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
+   -moz-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
+   -ms-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
+   -o-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
+   transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
+}
+
+@mixin rotate($deg) {
+   -moz-transform: rotate($deg);
+   -ms-transform: rotate($deg);
+   -webkit-transform: rotate($deg);
+   -o-transform: rotate($deg);
+   transform: rotate($deg);
+}
+
+@mixin scale($num) {
+   -moz-transform: scale($num);
+   -ms-transform: scale($num);
+   -webkit-transform: scale($num);
+   -o-transform: scale($num);
+   transform: scale($num);
+}
+
+@mixin skew($num) {
+   -webkit-transform: skewX($num);
+   -moz-transform: skewX($num);
+   -ms-transform: skewX($num);
+   -o-transform: skewX($num);
+   transform: skewX($num);
+}
+
+@mixin cnt($h) {
+   display: flex;
+   flex-direction: column;
+   height: $h;
+   text-align: center;
+   align-items: stretch;
+   justify-content: center;
+}
+
+@mixin tr($x, $y, $z) {
+   transform: translate3d($x, $y, $z);
+}
+
+;
+
+@mixin flexbox() {
+   display: -webkit-box;
+   display: -moz-box;
+   display: -ms-flexbox;
+   display: -webkit-flex;
+   display: flex;
+   font-size: 0;
+}
+
+@mixin flexorder($val) {
+   -webkit-box-ordinal-group: $val;
+   -moz-box-ordinal-group: $val;
+   -ms-flex-order: $val;
+   -webkit-order: $val;
+   order: $val;
+}
+
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+//для кириллицы нужно добавить в конец подключенного шрифта
+//&display=swap&subset=cyrillic-ext
+//<Подключаем шрифты>=======================================================================================
+//поставить кавычки в скобки
+@import url("@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;700&display=swap&subset=cyrillic-ext');");
+
+//</Подключаем шрифты>=======================================================================================
+//<Шрифт по умолчанию>==========================================================================================
+$fontfamily: 'Be Vietnam Pro', sans-serif;
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>==============================================================================================================
+
+
+//<ПЕРЕМЕННЫЕ>=====СЕТКА АДАПТИВА ======================================================================================================
+$minwidth: 320px;
+$mwidth: 1440px; //ширина всего полотна макета от дизайнера
+$mw: 1180; //ширина контейнера ВСЕГДА!! - добавила отступы без-ти
+// на основании нее остальные брейкпойнты
+$md1: $mw+12;
+$md2: 991.98; //планшет
+$md3: 767.98; //бол смартфон
+$md4: 479.98; //мал смартфон
+
+//</ПЕРЕМЕННЫЕ>==============================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+//подкл обнуляющий файл
+@import "null";
+
+
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+   width: 100%;
+   min-height: 100%;
+   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+   &.loaded {}
+}
+.main {
+   flex: 1 1 auto;
+}
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+.container {
+   max-width: $mw+px;
+   margin: 0 auto;
+   width: 100%;
+   padding: 0px 20px; //отступы без-ти
+
+   @media (max-width:$md1+px) {
+      max-width: 970px;
+   }
+
+   @media (max-width:$md2+px) {
+      max-width: 750px;
+   }
+
+   @media (max-width:$md3+px) {
+      max-width: none;
+      padding: 0 10px;
+   }
+}
+
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+//структура 
+.main-page {
+   display: flex;
+   padding: 50px 0px;
+}
+.aside__section {
+   flex: 0 1 25%;
+   border-right: 2px solid #cacaca;
+   padding-right: 20px;
+}
+.content__section {
+   flex: 0 1 75%;
+   padding: 0px 0px 0px 30px;
+}
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+@import "header.scss";
+@import "footer.scss";
+
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+//стили  aside
+.aside__title {
+   text-transform: uppercase;
+   font-size: 15px;
+   text-align: left;
+   background: #e8e9ea;
+   color: #000;
+   margin: 0px 0px 10px 0px;
+&_weight {
+   font-weight: 700;
+}
+   span {
+      font-weight: 700;
+    
+   }
+}
+.spoller__list li:not(:last-child) {
+   margin: 0px 0px 7px 0px;
+}
+.aside__link {
+   color: #000;
+   font-size: 14px;
+   &:hover {
+text-decoration: underline;
+   }
+}
+//спойллеры
+.block__item {
+   margin: 0px 0px 20px 0px;
+}
+.block {
+  
+}
+.block._init .block__title {
+   cursor: pointer;
+}
+.block__item {
+   position: relative;
+}
+.block._init .block__title::before,
+.block._init .block__title::after {
+   content: '';
+   width: 20px;
+   height: 2px;
+   background: #000;
+   position: absolute;
+   right: -12px;
+   top: 7px;
+   transition: transform 0.3s ease 0s
+}
+.block._init .block__title::after {
+   transform: rotate(-90deg);
+}
+.block._init .block__title._active::after {
+   transform: rotate(0deg);
+}
+
+.block__text {
+display:none;
+}
+.block__text._active {
+display: block;
+}
+
+//==========================================================================================================
+//контентная часть
+.content {
+
+   &__section {
+   }
+
+   &__text {
+      
+   }
+}
+.about {
+
+   &__text {
+margin: 0px 0px 20px 0px;
+&__text:last-child {
+   margin: 0px 0px 10px 0px;
+}
+&_list {
+   margin: 0px 0px 7px 0px;
+}
+      &_li {
+        
+         list-style-type: square;
+         margin: 0px 0px 10px 0px;
+      }
+   }
+}
+//=================================================================================
+//секция поиска
+.search {
+
+   &__section {
+      padding: 30px 0px;
+      display: flex;
+      align-items: center;
+   }
+
+   &__input {
+     width: 100%;
+    height: 40px;
+    padding-left:20px;
+    font-size: 18px;
+    &::placeholder {
+      text-transform: uppercase;
+      font-size: 16px;
+    }
+   }
+   &__btn {
+   }
+}
+.btn {
+   padding: 10px 20px;
+   border: 2px solid #cacaca;
+color: #000;
+text-transform: uppercase;
+letter-spacing: 0.15em;
+transition: all 0.3s ease 0s;
+margin: 0px 0px 0px 10px;
+&:hover {
+   //color: #cacaca;
+   background: #cacaca;
+   border: 2px solid #cacaca;
+}
+}
+
+
+//===================================================================================================================
+//документ
+.document__section {
+}
+   h1, h2, h3 {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 130%;
+      margin: 30px 0px 20px 0px;
+   }
+   .order__title {
+      font-size: 18px;
+   }
+   .order, .order__block {
+      text-align: left;
+p {
+   margin: 0px 0px 10px 0px;
+}
+   }
+//</ОСНОВНОЙ БЛОК>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+@import "burger.scss"; //стили меню-бургер
+@import "forms.scss"; //кнопки чекбоксы поля 
+@import "popup.scss"; //стили окон - поп-ап
+@import "ui.scss"; // сборка одинаковых классов вписываем сюда!
+@import "adaptive.scss"; // подкл адаптива после сетки
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>===================================================================================================

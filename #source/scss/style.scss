@@ -223,6 +223,7 @@ $md4: 479.98; //мал смартфон
    text-align: left;
    background: #e8e9ea;
    margin: 0px 0px 10px 0px;
+   text-transform: uppercase;
 }
    span {
       font-weight: 700;
@@ -365,6 +366,18 @@ margin: 0px 0px 0px 10px;
 p {
    margin: 0px 0px 10px 0px;
 }
+
+   }
+   .order {
+   padding: 20px 0px 0px 0px;
+   display: none;
+   }
+   .order.show {
+      display: block;
+   }
+   .order__btn {
+      display: block;
+      margin: 0 auto;
    }
 //</ОСНОВНОЙ БЛОК>====================================================================================================
 

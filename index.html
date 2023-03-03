@@ -19,17 +19,17 @@
       <div class="button__navigation">
          <div class="button button__up">
             <a href="#up" class="button-nav up">
-               <img src="/img/icons/arrow-up.png" alt='стрелка'>
+               <img src="./img/icons/arrow-up.png" alt='стрелка'>
             </a>
          </div>
          <div class="button button__plus">
             <a href="#" class="button-nav plus">
-               <img src="/img/icons/plus.png" alt='добавить'>
+               <img src="./img/icons/plus.png" alt='добавить'>
             </a>
          </div>
          <div class="button button__bookmark">
             <a href="#" class="button-nav bookmark">
-               <img src="/img/icons/bookmark.png" alt='закладки'>
+               <img src="./img/icons/bookmark.png" alt='закладки'>
             </a>
          </div>
       </div>
@@ -61,7 +61,7 @@
 <aside class="aside__nav">
    <div data-spollers data-one-spoller class="spoller__block block"> <!--общая коробка-->
 <div class="block-spoller__0 block__item">
-   <button data-spoller type="button" class="aside__title_weight block__title">ПТЭ ОАО РЖД</button>
+   <button data-spoller type="button" class="aside__title_weight block__title">ПРАВИЛа ТЕХНИЧЕСКОЙ ЭКСПЛУАТАЦИИ ЖЕЛЕЗНЫХ ДОРОГ РФ</button>
    <div class="block__text">
     <ul class="spoller__list">
       <li><a class="aside__link" href="#pte-1">I. Общие положения</a></li>
@@ -105,14 +105,16 @@
    <p class="about__text">Данный ресурс предназначен для ознакомления и быстрого доступа к Правилам
       технической эксплуатации железных дорог РФ, утвержденным приказом от 23 июня 2022 г. N 250.</p>
    <p class="about__text">После регистрации в личном кабинете появится возможность добавлять любые части нормативного документа в закладки (в избранное) для быстрого доступа к информации.</p>
-   <p class="about__text_list">Для этого необходимо: 
-     <li class="about__text_li">Если Вы открыли приложение на ПК, нужно выделить текст => нажать правой кнопкой мыши. В открывшемся меню выбрать => добавить в избранное.</li>
-   <li class="about__text_li">Если вы открыли приложение на планшете или смартфоне, нужно выделить текст => нажать кнопку "добавить в избранное" на панели рядом с логотипом.</li></p>
-   <p>Сохраненные данные можно посмотреть, нажав на кнопку "Избранное".</p>
+   <p class="about__text_list">Чтобы сохранить в закладки нужно выделить текст и нажать на кнопку "+" в правом нижнем углу.
+     </p>
+   <p>Сохраненные данные можно посмотреть, нажав на кнопку "Закладки" в правом нижнем углу.</p>
 </div>
-<section class="search__section">
-   <input class="search__input" type="text" placeholder="Поиск в документе">
-   <button class="search__btn btn">найти</button>
+<section>
+   <form action="" class="search__section">
+      <input id="text-to-find" class="search__input" type="text" autofocus placeholder="Поиск в документе">
+      <button class="search__btn btn" onclick="javascript: FindOnPage('text-to-find'); return false;" value="Search">найти</button>
+   </form>
+  
 </section>
 <section class="document__section">
    <h1>ПРИКАЗ
@@ -120,6 +122,7 @@
       ОБ УТВЕРЖДЕНИИ ПРАВИЛ
       ТЕХНИЧЕСКОЙ ЭКСПЛУАТАЦИИ ЖЕЛЕЗНЫХ ДОРОГ РОССИЙСКОЙ ФЕДЕРАЦИИ
       </h1>
+      <button class="btn order__btn">Показать документ</button>
       <div class="order">
          <p>В соответствии с абзацем первым пункта 1 статьи 17 Федерального закона от 10 января 2003
             г. N 17-ФЗ "О железнодорожном транспорте в Российской Федерации" (Собрание законодательства

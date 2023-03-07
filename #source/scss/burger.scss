@@ -1,7 +1,39 @@
+.header {
+   position: relative;
+   &__content {
+   }
+
+   &__menu {
+   }
+}
+.container {
+}
+.logo {
+}
+.menu {
+
+   &__icon {
+   }
+
+   &__body {
+   }
+
+   &__list {
+   }
+
+   &__link {
+   }
+}
+.icon-menu {
+}
+
+ 
+ 
+ 
  //Меню-бургер отрисовка
  .icon-menu {
    display:none;
-        @media(max-width: $md2+px) {
+        @media(max-width: $md3+px) {
          display: inline-block; //ОЮЯЗАТЕЛЬНО иначе трансформ не будет работать
    position: relative;
    width:30px;

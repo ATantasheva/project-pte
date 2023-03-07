@@ -147,16 +147,45 @@ $md4: 479.98; //мал смартфон
 .main-page {
    display: flex;
    padding: 50px 0px;
+   @media(max-width: $md3+px) {
+      padding: 30px 0px 0px 0px;
+   }
+   @media(max-width: $md2+px) {
+      display: block;
+      position: relative;
+   }
 }
 .aside__section {
    flex: 0 1 25%;
    border-right: 2px solid #cacaca;
    padding-right: 20px;
+   transition: left 0.5s ease 0s;
+   overflow: auto;
+   @media(max-width: $md2+px) {
+      border-right: 0px solid #cacaca;
+      position: absolute;
+      left: -500%;
+      top: 0;
+      background-color: #cacaca;
+      z-index: 2;
+      padding: 20px;
+   }
+&.show {
+   left: 0;
+}
+
+
+
 }
 .content__section {
    flex: 0 1 75%;
    padding: 0px 0px 0px 30px;
+   @media(max-width: $md2+px) {
+      flex: 1 1 100%;
+      padding: 0px 0px 0px 0px;
+   }
 }
+//=============================================================================================================================
 //кнопки навигации
 .button {
    border: 2px solid #000;
@@ -169,6 +198,7 @@ $md4: 479.98; //мал смартфон
    right: 20px;
    background-color: rgb(145, 182, 145);
    transition: all 0.3s ease 0s;
+  
 &:hover {
    background-color: rgb(126, 243, 126);
 }
@@ -209,6 +239,21 @@ $md4: 479.98; //мал смартфон
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 
 //<ОСНОВНОЙ БЛОК>====================================================================================================
+//кнопка оглавление с 992px
+.content-list {
+   @media(max-width: $md2+px) {
+      margin: 20px 0px 20px 0px;
+   }
+}
+.content__btn {
+display: block;
+
+   @media(min-width: $md2+px) {
+display: none;
+   }
+}
+
+
 //стили  aside
 .aside__title {
    text-transform: uppercase;
@@ -217,6 +262,9 @@ $md4: 479.98; //мал смартфон
    background: #e8e9ea;
    color: #000;
    margin: 0px 0px 10px 0px;
+   @media(max-width: $md2+px) {
+      background: #cacaca;
+   }
 &_weight {
    font-weight: 700;
    font-size: 15px;
@@ -224,6 +272,9 @@ $md4: 479.98; //мал смартфон
    background: #e8e9ea;
    margin: 0px 0px 10px 0px;
    text-transform: uppercase;
+   @media(max-width: $md2+px) {
+      background: #cacaca;
+   }
 }
    span {
       font-weight: 700;
@@ -379,10 +430,13 @@ p {
       display: block;
       margin: 0 auto;
    }
+
+  
+    
 //</ОСНОВНОЙ БЛОК>====================================================================================================
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
-@import "burger.scss"; //стили меню-бургер
+//@import "burger.scss"; //стили меню-бургер
 @import "forms.scss"; //кнопки чекбоксы поля 
 @import "popup.scss"; //стили окон - поп-ап
 @import "ui.scss"; // сборка одинаковых классов вписываем сюда!

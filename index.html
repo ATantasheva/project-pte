@@ -38,25 +38,30 @@
             <div class="header__menu">
                <!--заготовка для бургера-->
                <div  class="logo">Логотип</div>
-               <div class="menu__icon icon-menu"> 
-                  <span></span>
-                  <span></span>
-                  <span></span>
-               </div>
+           
                   <!--навигация-->
                   <div class="menu__body"> <!--обязательно оборачивать nav-->
-               <nav class="menu__body">
+               <nav class="menu__body-list">
                  <ul class="menu__list">
                   <li><a href="#" class="menu__link">Вход</a></li>
                   <li><a href="#" class="menu__link">Регистрация</a></li>
                </ul>
                </nav>
             </div>
+            <div class="menu__icon icon-menu"> 
+               <span></span>
+               <span></span>
+               <span></span>
+            </div>
             </div>
       </div>
 </header>       <main class="main">
      <div class="container">
+      <div class="content-list">
+      <button class="content__btn btn">содержание</button>
+      </div>
       <section class="main-page">
+      
      <section class="aside__section">
 <aside class="aside__nav">
    <div data-spollers data-one-spoller class="spoller__block block"> <!--общая коробка-->
@@ -109,10 +114,11 @@
      </p>
    <p>Сохраненные данные можно посмотреть, нажав на кнопку "Закладки" в правом нижнем углу.</p>
 </div>
+
 <section>
    <form action="" class="search__section">
       <input id="text-to-find" class="search__input" type="text" autofocus placeholder="Поиск в документе">
-      <button class="search__btn btn" onclick="javascript: FindOnPage('text-to-find'); return false;" value="Search">найти</button>
+      <button type="submit" class="search__btn btn" onclick="javascript: FindOnPage('text-to-find'); return false;" value="Search">найти</button>
    </form>
   
 </section>
@@ -200,6 +206,8 @@
    3 Настоящий приказ вступает в силу с 1 августа 2022 г. и действует шесть лет со дня его
    вступления в силу.</p>
       </div>
+   </section>
+<section class="order__main"> <!--оболочка всего птэ-->
             <div class="order__block">
                <h2>ПРАВИЛА ТЕХНИЧЕСКОЙ ЭКСПЛУАТАЦИИ ЖЕЛЕЗНЫХ ДОРОГ РОССИЙСКОЙ ФЕДЕРАЦИИ
                </h2>
@@ -261,8 +269,8 @@
                            </h3>
                         </div>
 </section>
-    </section>
-  
+
+</section>
    </section>
    </main>
 <footer>
@@ -286,6 +294,8 @@
 <script src="js/main.js"></script>
 <!--пустой js для программистов -->
 <script src="js/custom.js" ></script>
+<!--меню-бургер -->
+<script src="js/menu-burger.js" ></script>
 <!--динамический адаптив -->
 <script type="module" src="js/dynamic_adapt-master/app.js"></script>
 <!--слайдер на чистом js swiper от фрилансера по жизни -->

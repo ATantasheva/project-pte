@@ -15,7 +15,64 @@
 </head>
 
 <body>
+   <!--подкл для php-->
+   <div class="result-php"></div>
+      <!--подкл для php-->
    <div class="wrapper">
+      <div id="popup-enter" class="popup-enter popup">
+         <div class="popup__body">
+				<div class="popup__content">
+					<a href="#header" class="popup__close close-popup">X</a>
+					<div class="popup__title">Вход</div>
+					<div class="popup__text">
+<form action="GET">
+   <div class="block__popup">
+   <input class="input form__input" type="text" placeholder="Введите адрес электронной почты">
+   <input class="input form__input" type="password" placeholder="Введите пароль">
+   <button class="btn enter">Войти</button>
+</div>
+</form>
+					</div>
+				</div>
+			</div>
+      </div>
+      <div id="popup-reg" class="popup-registr popup">
+         <div class="popup__body">
+				<div class="popup__content">
+					<a href="#header" class="popup__close close-popup">X</a>
+					<div class="popup__title">Регистрация</div>
+					<div class="popup__text">
+<form action="check.php" id="form" class="form__body" method="post">
+   <div class="block__popup">
+      <div class="form__item">
+         <label for="formName" class="form__label">Имя*:</label>
+         <input id="formName" type="text" name="name" class="form__input _req">
+      </div>
+   	<div class="form__item">
+         <label for="formEmail" class="form__label">E-mail*:</label>
+         <input id="formEmail" type="text" name="email" class="form__input _req _email">
+      </div>
+      <div class="form__item">
+         <label for="formPassword1" class="form__label">Придумайте пароль*:</label>
+         <input id="formPassword1" type="password" name="password" class="form__input _req password">
+      </div>
+      <div class="form__item">
+         <label for="formPassword2" class="form__label">Повторите пароль*:</label>
+         <input id="formPassword2" type="password" name="password" class="form__input _req password1">
+      </div>
+      <div class="form__item">
+         <div class="checkbox">
+            <input id="formAgreement" checked type="checkbox" name="agreement" class="checkbox__input _req">
+            <label for="formAgreement" class="checkbox__label"><span>Я даю свое согласие на обработку персональных данных в соответствии с <a href="">Условиями</a>*</span></label>
+         </div>
+      </div>
+   <button type="submit" class="form__button btn enter">Регистрация</button>
+</div>
+</form>
+					</div>
+				</div>
+			</div>
+      </div>
       <div class="button__navigation">
          <div class="button button__up">
             <a href="#up" class="button-nav up">
@@ -43,8 +100,8 @@
                   <div class="menu__body"> <!--обязательно оборачивать nav-->
                <nav class="menu__body-list">
                  <ul class="menu__list">
-                  <li><a href="#" class="menu__link">Вход</a></li>
-                  <li><a href="#" class="menu__link">Регистрация</a></li>
+                  <li><a href="#popup-enter" class="menu__link popup-link">Вход</a></li>
+                  <li><a href="#popup-reg" class="menu__link popup-link">Регистрация</a></li>
                </ul>
                </nav>
             </div>
@@ -290,6 +347,11 @@
 
 
    <!--подключаем js -->
+
+<!--подкл jquery через cdn !!!!
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+-->
+
 <!--собираются кусочки js которые я пишу -->
 <script src="js/main.js"></script>
 <!--пустой js для программистов -->
@@ -298,6 +360,12 @@
 <script src="js/menu-burger.js" ></script>
 <!--динамический адаптив -->
 <script type="module" src="js/dynamic_adapt-master/app.js"></script>
+
+
+<!--для jquery php
+<script src="js/jqueryforphp.js" ></script> -->
+<!--валидация формы и связка с php-->
+<script src="js/popup-form.js" ></script>
 <!--слайдер на чистом js swiper от фрилансера по жизни -->
 <!--<script src="js/swiper-bundle.min.js"></script> -->
 <!--<script src="js/slider-script.js"></script> -->

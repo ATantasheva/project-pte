@@ -642,7 +642,7 @@ h1, h2, h3 {
   overflow-x: hidden;
   -webkit-transition: all 0.8s ease 0s;
   transition: all 0.8s ease 0s;
-  z-index: 6;
+  z-index: 15;
 }
 
 .popup.open {
@@ -692,7 +692,6 @@ h1, h2, h3 {
   -webkit-transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
           transform: perspective(600px) translate(0px, -100%) rotateX(45deg);
 }
-
 .popup__close {
   position: absolute;
   right: 10px;
@@ -706,11 +705,13 @@ h1, h2, h3 {
   font-size: 40px;
   margin: 0px 0px 1em 0px;
 }
+@media (max-width: 479.98px) {
+  .popup__title {
+    font-size: 30px;
+  }
+}
 
 .block__popup {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -721,10 +722,6 @@ h1, h2, h3 {
 }
 
 .input {
-  padding: 10px 10px 10px 10px;
-  width: 400px;
-  font-size: 18px;
-  border: 2px solid #cacaca;
   margin: 0px 0px 20px 0px;
 }
 
@@ -733,6 +730,33 @@ h1, h2, h3 {
   display: block;
   height: 50px;
   font-size: 18px;
+}
+@media (max-width: 479.98px) {
+  .enter {
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
+.popup__text {
+  width: 100%;
+}
+
+.form__input {
+  height: 50px;
+  padding: 0px 20px;
+  border: 2px solid #cacaca;
+  width: 100%;
+  font-size: 18px;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+@media (max-width: 479.98px) {
+  .form__input {
+    height: 40px;
+    padding: 0px 12px;
+    font-size: 16px;
+  }
 }
 
 .form__item {
@@ -744,16 +768,6 @@ h1, h2, h3 {
   display: block;
   margin: 0px 0px 10px 0px;
 }
-.form__input {
-  height: 50px;
-  padding: 0px 20px;
-  border: 2px solid #cacaca;
-  width: 100%;
-  font-size: 18px;
-  -webkit-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s;
-}
-
 .form__input:focus {
   -webkit-box-shadow: 0 0 15px #7a956b;
           box-shadow: 0 0 15px #7a956b;

@@ -9,5 +9,5 @@ sass
 
 javascript
 
-сбщрщик prepros
+сборщик prepros
 

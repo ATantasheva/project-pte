@@ -1,5 +1,7 @@
 let userEmail = getCookie('email');
 console.log(userEmail);
+
+
 //запрос на сервер
 ajax('core/get_user_data.php', 'POST', getUserData, { "email": userEmail });
 
@@ -20,6 +22,10 @@ function getCookie(cname) {
    }
    return "";
 }
+//переменные для работы с ЛК
+let lkUserGreeting; //имя user для приветсвия
+const lkGreeting = document.querySelector('.lk-greeting'); //приветствия
+
 
 //обработка рез-та
 function getUserData(result) {
@@ -30,13 +36,16 @@ function getUserData(result) {
    console.log(result);
    //поля автоматич заполнилиьс и подтянулись данные из БД
    document.querySelector('.lk-name').value = result.name;
+   console.log(result.name);
    document.querySelector('.lk-password1').value = result.password;
+   //приветствие в header
+   lkUserGreeting = result.name;
+   lkGreeting.innerHTML = `Здравствуйте ${lkUserGreeting}`;
 }
 //по клику на кнопку отправляем данные на сервер
 
 document.querySelector('.lk-submit').onclick = function (event) {
    event.preventDefault();
-
    let updateData = {
       "email": userEmail,
       "name": document.querySelector('.lk-name').value,
@@ -51,6 +60,35 @@ function updateUserData(result) {
    if (result == 1) {
       alert('Данные успешно обновлены!')
    } else {
-      alert('Ощибка обновления.')
+      alert('Ошибка обновления.')
    }
 }
+//===========================================================================================
+//скрывать и показывать элементы при авторизации  ГЛОБАЛЬНО
+//если есть куки почта
+
+const mainPageHeader = document.querySelector('.menu__list');
+const lkPageHeader = document.querySelectorAll('.lk');
+const formLkUpdate = document.querySelector('.form-lk__update');
+const profile = document.querySelector('.profile');
+
+
+if (userEmail) {
+   console.log(lkPageHeader);
+   //убираем кнопки -вход и регистрация  в хедер 
+   mainPageHeader.classList.add('hidden');
+   lkPageHeader.forEach(function (element) {
+      element.classList.add('show');
+   });
+   profile.addEventListener('click', function() {
+      formLkUpdate.classList.toggle('show');
+   })
+} else {
+   mainPageHeader.classList.remove('hidden');
+   lkPageHeader.forEach(function (element) {
+      element.classList.add('show');
+   });
+}
+
+
+

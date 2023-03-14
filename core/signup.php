@@ -11,6 +11,23 @@ if ($name =='' OR $pass1=='' OR $email=='' OR $pass2==''){
     echo 2;
     die;
 }
+//проверка на совпадение пароля
+if($pass1 != $pass2) {
+   echo 3;
+   die;
+}
+
+ // проверка на правильность написания Email
+ if (!preg_match("/[0-9a-z_]+@[0-9a-z_^\.]+\.[a-z]{2,3}/i", $email)) {
+   echo 4;
+   die;
+}
+//проверка уникальности email
+if(filter_var($email, FILTER_VALIDATE_EMAIL) !== false) {
+   echo 5;
+   die;
+}
+
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -20,6 +37,8 @@ if ($conn->connect_error) {
 } 
 
 $sql = "INSERT INTO users (name, email, password, password2) VALUES ('".$name."', '".$email."', '".$pass1."', '".$pass2."')";
+
+
 
 if ($conn->query($sql) === TRUE) {
     echo 1;

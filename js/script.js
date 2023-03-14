@@ -31,6 +31,15 @@ document.querySelector('.signup-submit').onclick = function (event) {
       else if (result == 1) {
          alert('Успех. Теперь можно войти!');
       }
+      else if (result == 3) {
+         alert('Повторный пароль введен не верно!');
+      }
+      else if (result == 4) {
+         alert('Неверно введен е-mail.');
+      }
+      else if (result == 5) {
+         alert('Пользователь с таким Email существует!');
+      }
       else {
          alert('Ошибка, повторите регистрацию позже!');
       }
@@ -56,6 +65,7 @@ document.querySelector('.login-submit').onclick = function (event) {
    //core/signup.php - куда login - имя функции обработки data - массив который передаем
    ajax('core/login.php', 'POST', login, data);
 
+ 
    function login(result) {
       if (result == 2) {
          alert('Заполните поля');
@@ -68,11 +78,16 @@ document.querySelector('.login-submit').onclick = function (event) {
          //установка куки 
          result = JSON.parse(result);
          let d = new Date();
-         d.setTime(d.getTime() + (5 * 60 * 1000)); //сутки 24*60*60*1000
+         d.setTime(d.getTime() + (30 * 60 * 1000)); //сутки 24*60*60*1000
          let expires = d.toUTCString();
          document.cookie = `email=${result.email}; expires=${expires}; path=/`;
+         
          location.href = "cabinet.php";
       }
    }
+ 
 }
 //=====================================================================================
+
+
+

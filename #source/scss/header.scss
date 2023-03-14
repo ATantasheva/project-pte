@@ -173,4 +173,26 @@ height: 47px;
    }
 }
 }
+//===============================================================================
+//скрыть из хедер при ЛК
+.menu__list.hidden {
+   display: none;
+}
 
+//стили кнопок ЛК
+.lk {
+   display: none;
+}
+.lk.show {
+   display: block;
+}
+.lk-greeting {
+font-size: 18px;
+text-align: center;
+font-weight: 700;
+}
+.lk {
+   .lk__btn {
+      margin: 20px 10px 0px 0px;
+   }
+}

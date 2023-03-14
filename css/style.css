@@ -428,6 +428,28 @@ h6 {
   }
 }
 
+.menu__list.hidden {
+  display: none;
+}
+
+.lk {
+  display: none;
+}
+
+.lk.show {
+  display: block;
+}
+
+.lk-greeting {
+  font-size: 18px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.lk .lk__btn {
+  margin: 20px 10px 0px 0px;
+}
+
 @media (max-width: 991.98px) {
   .content-list {
     margin: 20px 0px 20px 0px;

@@ -24,7 +24,7 @@ if(!isset($_COOKIE['email']) OR trim($_COOKIE['email']) == '') {
             </a>
          </div>
          <div class="button button__plus">
-            <a href="#" class="button-nav plus">
+            <a href="#popup-bookmark" class="button-nav plus popup-link">
                <img src="./img/icons/plus.png" alt='добавить'>
             </a>
          </div>
@@ -38,27 +38,14 @@ if(!isset($_COOKIE['email']) OR trim($_COOKIE['email']) == '') {
       <main class="main">
          <div class="container">
             
-         <div id="popup-enter" class="popup">
+         <div id="formUpdate" class="popup">
          <div class="popup__body">
             <div class="popup__content popup__enter">
                <a href="#header" class="popup__close close-popup">X</a>
-               <div class="popup__title">Вход</div>
+               <div class="popup__title">Изменение данных профиля</div>
                <div class="popup__text">
                   <form method="post" class="form__body">
-                     <div class="block__popup">
-                        <input class="input form__input login-email" type="text" name="email"
-                           placeholder="Введите адрес электронной почты">
-                        <input class="input form__input login-password1" name="password1" type="password" placeholder="Введите пароль">
-                        <button class="btn enter login-submit">Войти</button>
-
-                     </div>
-                  </form>
-               </div>
-            </div>
-         </div>
-      </div>
-         <form id="formUpdate" class="form__body form-lk__update popup__link">
-                     <div class="block__popup">
+                  <div class="block__popup">
                         <div class="form__item">
                            <label for="formName" class="form__label">Изменить имя*:</label>
                            <input id="formName" type="text" name="name" class="form__input lk-name">
@@ -69,8 +56,33 @@ if(!isset($_COOKIE['email']) OR trim($_COOKIE['email']) == '') {
                         </div>
                         <button type="update" class="form__button btn enter lk-submit">Изменить данные профиля</button>
                      </div>
-                    
                   </form>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="popup-bookmark" class="popup popup-book">
+         <div class="popup__body">
+            <div class="popup__content popup__enter">
+               <a href="#header" class="popup__close close-popup">X</a>
+               <div class="popup__title">Добавить в закладки</div>
+               <div class="popup__text">
+                  <form method="post" class="form__body">
+                  <div class="block__popup">
+                        <div class="form__item">
+                           <label for="formBookmark" class="form__label">Название закладки:</label>
+                           <input id="formBookmark" type="text" class="form__input">
+                        </div>
+                        <div class="form__item">
+                        <textarea class="form__input textarea" type="text"  id="cloned"></textarea>
+                        </div>
+                        <button type="update" class="form__button btn enter lk-submit">Сохранить в закладках</button>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
                   </div>
           
             <?php include "#source/content.html" ?>

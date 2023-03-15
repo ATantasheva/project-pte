@@ -80,7 +80,7 @@ if (userEmail) {
    lkPageHeader.forEach(function (element) {
       element.classList.add('show');
    });
-   profile.addEventListener('click', function() {
+   profile.addEventListener('click', function () {
       formLkUpdate.classList.toggle('show');
    })
 } else {
@@ -90,5 +90,37 @@ if (userEmail) {
    });
 }
 
+//============================================================================
+//выделение текста и копирование в поле закладки
 
 
+
+// Получение выделенного текста с помощью анонимной самовызывающейся функции.
+function get_text() {
+   // Объявление переменной.
+   let text;
+   let textarea = document.querySelector('.textarea');
+   if (window.getSelection) {
+      // Современный способ.
+      text = window.getSelection().toString();
+   } else if (document.getSelection) {
+      // Старый способ.
+      text = document.getSelection();
+   } else if (document.selection) {
+      // IE.
+      text = document.selection.createRange().text;
+   }
+
+   // Вывод результата, если получен выделенный текст.
+   if (text) {
+      textarea.innerHTML = `${text}`;
+      console.log(textarea);
+   }
+}
+
+// Применять эту функцию к тегам, содержащим текстовую информацию.
+var p_arr = document.getElementsByTagName("p");
+
+for (var i = 0; i < p_arr.length; i++) {
+   p_arr[i].onmouseup = get_text;
+}

@@ -394,6 +394,11 @@ margin: 0px 0px 0px 10px;
    background: #cacaca;
    border: 2px solid #cacaca;
 }
+@media(max-width: $md4+px) {
+   padding: 7px 10px;
+   line-height: 120%;
+   height: 100%;
+}
 }
 
 

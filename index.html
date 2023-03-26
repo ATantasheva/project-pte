@@ -93,32 +93,32 @@
          </div>
       </div>
 <header id="up" class="header">
-      <div class="header__content container">
-            <div class="header__menu">
-               <!--заготовка для бургера-->
-               <div  class="logo">Логотип</div>
-           
-                  <!--навигация-->
-                  <div class="menu__body"> <!--обязательно оборачивать nav-->
-               <nav class="menu__body-list">
-                 <ul class="menu__list">
+   <div class="header__content container">
+      <div class="header__menu">
+         <!--заготовка для бургера-->
+         <div class="logo">Логотип</div>
+
+         <!--навигация-->
+         <div class="menu__body"> <!--обязательно оборачивать nav-->
+            <nav class="menu__body-list">
+               <ul class="menu__list">
                   <li><a href="#popup-enter" class="menu__link popup-link">Вход</a></li>
                   <li><a href="#popup-reg" class="menu__link popup-link">Регистрация</a></li>
                </ul>
                <div class="lk">
-               <div class="lk-greeting"></div>
-               <button class="logout btn lk__btn">Выход</button>
-               <button href="#formUpdate" class="popup-link profile btn lk__btn">Мой профиль</button>
-            </div>
-               </nav>
-            </div>
-            <div class="menu__icon icon-menu"> 
-               <span></span>
-               <span></span>
-               <span></span>
-            </div>
-            </div>
+                  <div name="userEmail" class="lk-greeting"></div>
+                  <button class="logout btn lk__btn">Выход</button>
+                  <button href="#formUpdate" class="popup-link profile btn lk__btn">Мой профиль</button>
+               </div>
+            </nav>
+         </div>
+         <div class="menu__icon icon-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+         </div>
       </div>
+   </div>
 </header><!DOCTYPE html>
 <html lang="ru">
 
@@ -194,10 +194,9 @@
 
                   <section>
                      <form action="" class="search__section">
-                        <input id="text-to-find" class="search__input" type="text" autofocus
-                           placeholder="Поиск в документе">
-                        <button type="submit" class="search__btn btn"
-                           onclick="javascript: FindOnPage('text-to-find'); return false;" value="Search">найти</button>
+                        <input id="inputId" class="search__input" type="text" autofocus placeholder="Поиск в документе">
+                        <!--onclick="javascript: FindOnPage('text-to-find'); return false;"-->
+                        <button id="" class="search__btn btn" value="Search">найти</button>
                      </form>
 
                   </section>

@@ -54,12 +54,51 @@ orderBtn.addEventListener('click', function () {
 
 let lastResFind = "";
 let copy_page = "";
+const allBlocks = document.querySelector('.main');
+
+let searchBtn = document.querySelector('.search__btn');
+let inputId = document.querySelector('#inputId');
+searchBtn.addEventListener('click', FindOnPage);
+function TrimStr(s) { //удаляем пробелы
+   s = s.replace(/^\s+/g, '');
+   return s.replace(/\s+$/g, '');
+}
+function FindOnPage(inputId) {
+   let obj = window.document.querySelector('#inputId');
+   console.log(obj);
+   let textToFind;
+   if (obj) {
+      textToFind = TrimStr(obj.value);
+   } else {
+      alert("Введенная фраза не найдена");
+      return;
+   }
+   if (textToFind == "") {
+      alert("Вы ничего не ввели");
+      return;
+   }
+   if (document.body.innerHTML.indexOf(textToFind) == "-1")
+      alert("Ничего не найдено, проверьте правильность ввода!");
+   if (copy_page.length > 0) {
+      document.body.innerHTML = copy_page;
+   }
+   else {
+      copy_page = document.body.innerHTML;
+   }
+   document.body.innerHTML = document.body.innerHTML.replace(eval("/name=" + lastResFind + "/gi"), " ");
+   document.body.innerHTML = document.body.innerHTML.replace(eval("/" + textToFind + "/gi"),
+      "<a name=" + textToFind + " style='background:#FFF820'>" + textToFind + "</a>");
+   lastResFind = textToFind;
+   window.location = '#' + textToFind;
+}
+/*
+let lastResFind = "";
+let copy_page = "";
 const allBlocks = document.body.querySelectorAll('*');
 function TrimStr(s) { //удаляем пробелы
    s = s.replace(/^\s+/g, '');
    return s.replace(/\s+$/g, '');
 }
-
 function FindOnPage(inputId) {
    let obj = window.document.getElementById(inputId);
    console.log(obj);
@@ -83,38 +122,44 @@ function FindOnPage(inputId) {
       copy_page = document.body.innerHTML;
    }
    document.body.innerHTML = document.body.innerHTML.replace(eval("/name=" + lastResFind + "/gi"), " ");
-   document.body.innerHTML = document.body.innerHTML.replace(eval("/" + textToFind + "/gi"), "<a name=" + textToFind + " style='background:#FFF820'>" + textToFind + "</a>");
+   document.body.innerHTML = document.body.innerHTML.replace(eval("/" + textToFind + "/gi"),
+      "<a name=" + textToFind + " style='background:#FFF820'>" + textToFind + "</a>");
    lastResFind = textToFind;
    console.log(lastResFind.length);
-   window.location = '#' + textToFind;
+   // window.location = '#' + textToFind;
 }
 
-
+*/
 /*
-let inputText = document.querySelector('.search__input'); //поле
-console.log(inputText);
-let inputBtn = document.querySelector('.search__btn'); //кнопка поиск
-console.log(inputBtn);
-let orderMain = document.querySelectorAll('.order__main .order__block p'); //весь документ
-console.log(orderMain);
-
-inputBtn.addEventListener('click', search);
-
-function search (text) {
-  let words = inputText.value.trim();
-  console.log(words);
-  if(words !== '' ) {
-   orderMain.forEach(elem => {
-      if(elem.innerText.search(words) == -1) {
-         elem.classList.add('color');
-      }
-   })
-  } else {
-   orderMain.forEach(elem => {
-      elem.classList.remove('color');
-   });
-  }
-} */
+let opar = document.querySelector('.main').innerHTML;
+console.log(opar);
+let searchBtn = document.querySelector('.search__btn');
+console.log(searchBtn);
+searchBtn.addEventListener('click', highlight);
+function highlight(event) {
+   event.preventDefault();
+   let paragraph = document.querySelector('.main');
+   let search1 = document.getElementById('text-to-find').value;
+   let search = search1.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+   let re = new RegExp(search, 'g');
+   console.log(re);
+   if (search.length > 0) {
+      paragraph.innerHTML = opar.replace(re, `<mark>$&</mark>`);
+      window.location = '#' + re;
+      let mark = document.getElementsByTagName('mark');
+      console.log(mark);
+      return;
+   }
+   else if (search.length == 0) {
+      alert('Вы ничего не ввели!');
+      return;
+   }
+   else {
+      paragraph.innerHTML = opar;
+      return;
+   }
+}
+*/
 //забрать из инпута данные и вывести их вбок для быстрой навигации
 
 //=====================================================================================
@@ -314,7 +359,7 @@ function formValidate(form) {
       } else if (input.getAttribute("type") === "checkbox" && input.checked === false) {
          formAddError(input);
          error++;
-      } else if(input.classList.contains('password') || input.classList.contains('password1')) {
+      } else if (input.classList.contains('password') || input.classList.contains('password1')) {
          if (passwordTest(input)) {
             formAddError(input);
             error++;
@@ -345,9 +390,9 @@ function emailTest(input) {
 }
 //функция чтобы пароли были одинаковые
 function passwordTest(input) {
-   let pass1 =document.querySelector('.password').value;
+   let pass1 = document.querySelector('.password').value;
    let pass2 = document.querySelector('.password1').value;
-   if(pass1 !== pass2) {
+   if (pass1 !== pass2) {
       alert('Введенные пароли НЕ совпадают');
    }
 }

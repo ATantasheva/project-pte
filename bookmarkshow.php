@@ -3,21 +3,23 @@ if(!isset($_COOKIE['email']) OR trim($_COOKIE['email']) == '') {
    header("location: index.html");
    exit;
 }
+
 ?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-   <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
    <meta name="format-detection" content="telephone=no">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <link rel="stylesheet" href="css/style.css">
    <link rel="shortcut icon" href="favicon.ico"> 
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Личный кабинет</title>
+   <title>Мои закладки</title>
 </head>
 <body>
    <div class="wrapper">
-      <div class="button__navigation">
+   <div class="button__navigation">
          <div class="button button__up">
             <a href="#up" class="button-nav up">
                <img src="./img/icons/arrow-up.png" alt='стрелка'>
@@ -33,12 +35,11 @@ if(!isset($_COOKIE['email']) OR trim($_COOKIE['email']) == '') {
                <img src="./img/icons/bookmark.png" alt='закладки'>
             </a>
          </div>
-         </div>
-      <?php include "#source/header.html" ?>
-      <main class="main">
-         <div class="container">
-            
-         <div id="formUpdate" class="popup">
+      </div>
+   <?php include "#source/header.html" ?>
+   <main class="main">
+      <div class="container">
+      <div id="formUpdate" class="popup">
          <div class="popup__body">
             <div class="popup__content popup__enter">
                <a href="#header" class="popup__close close-popup">X</a>
@@ -60,9 +61,8 @@ if(!isset($_COOKIE['email']) OR trim($_COOKIE['email']) == '') {
                </div>
             </div>
          </div>
-         </div>
-   
-         <div id="popup-bookmark" class="popup">
+      </div>
+      <div id="popup-bookmark" class="popup popup-book">
          <div class="popup__body">
             <div class="popup__content popup__enter">
                <a href="#header" class="popup__close close-popup">X</a>
@@ -81,21 +81,26 @@ if(!isset($_COOKIE['email']) OR trim($_COOKIE['email']) == '') {
                      </div>
                   </form>
                </div>
-               </div>
-                  
-                  </div>
-                  </div>
-                  <?php include "#source/content.html" ?>
             </div>
-            </div>
-            </div>
-         </main>
-      <!-- @import "footer.html" -->
-      <?php include "#source/footer.html" ?>
+         </div>
+      </div>
+
+      <button class="btn btn-for-bookmark">
+         <a class="btn-bookmark" href="cabinet.php">На главную</a>
+      </button>
+ 
+  
+      <div class="bookmarks__page">
+      <div class="bookmark__item">
+     
+      </div>
+      </div>
+   
+
+
+   </main>
+   <?php include "#source/footer.html" ?>
    </div>
-  
-  
-  
    <script src="js/ajax.js"></script>
    <script src="js/main.js"></script>
    <script src="js/menu-burger.js"></script>
@@ -103,3 +108,6 @@ if(!isset($_COOKIE['email']) OR trim($_COOKIE['email']) == '') {
    <script src="js/logout.js"></script>
 </body>
 </html>
+
+
+

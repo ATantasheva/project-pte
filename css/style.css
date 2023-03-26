@@ -232,10 +232,31 @@ h6 {
   bottom: 140px;
 }
 
+.button__bookmark,
+.button__plus {
+  display: none;
+}
+
+.button__bookmark.show,
+.button__plus.show {
+  display: block;
+}
+
 .button-nav img {
   width: 30px;
   height: 30px;
   margin: 10px;
+}
+
+.btn-for-bookmark {
+  color: #000;
+  margin-bottom: 30px;
+  margin-left: 0px;
+}
+
+.btn-bookmark {
+  color: #000;
+  display: block;
 }
 
 .header {
@@ -624,7 +645,9 @@ h6 {
   }
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   text-align: center;
   font-size: 22px;
   font-weight: 700;
@@ -637,10 +660,12 @@ h1, h2, h3 {
   font-size: 18px;
 }
 
-.order, .order__block {
+.order,
+.order__block {
   text-align: left;
 }
-.order p, .order__block p {
+.order p,
+.order__block p {
   margin: 0px 0px 10px 0px;
 }
 
@@ -658,6 +683,74 @@ h1, h2, h3 {
   margin: 0 auto;
 }
 
+.bookmarks__page {
+  padding: 40px 0px 20px 0px;
+}
+.bookmark__item {
+  margin: 0px 0px 50px 0px;
+}
+.bookmark__item .bookmark__text {
+  height: 100px;
+}
+
+.bookmark__panel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.bookmark-title {
+  width: 90%;
+}
+.bookmark-title {
+  margin: 0px 0px 15px 0px;
+}
+
+[data-tooltip] {
+  position: relative;
+  /* Относительное позиционирование */
+}
+
+[data-tooltip]::after {
+  content: attr(data-tooltip);
+  /* Выводим текст */
+  position: absolute;
+  /* Абсолютное позиционирование */
+  width: 100px;
+  /* Ширина подсказки */
+  left: -100px;
+  top: 0;
+  /* Положение подсказки */
+  background: #3989c9;
+  /* Синий цвет фона */
+  color: #fff;
+  /* Цвет текста */
+  padding: 0.5em;
+  /* Поля вокруг текста */
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  /* Параметры тени */
+  pointer-events: none;
+  /* Подсказка */
+  opacity: 0;
+  /* Подсказка невидима */
+  -webkit-transition: 1s;
+  transition: 1s;
+  /* Время появления подсказки */
+  z-index: 15;
+}
+
+[data-tooltip]:hover::after {
+  opacity: 1;
+  /* Показываем подсказку */
+  top: 2em;
+}
+
+mark {
+  background-color: yellow;
+  color: #000;
+}
+
+/* Положение подсказки */
 .popup {
   position: fixed;
   width: 100%;
@@ -774,7 +867,7 @@ h1, h2, h3 {
 
 .form__input {
   height: 50px;
-  padding: 0px 20px;
+  padding: 5px 20px;
   border: 2px solid #cacaca;
   width: 100%;
   font-size: 18px;

@@ -41,7 +41,7 @@ document.querySelector('.signup-submit').onclick = function (event) {
          alert('Пользователь с таким Email существует!');
       }
       else {
-         alert('Ошибка, повторите регистрацию позже!');
+         alert('Пользователь с таким Email существует!');
       }
    }
 

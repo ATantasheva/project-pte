@@ -75,7 +75,7 @@ if(!isset($_COOKIE['email']) OR trim($_COOKIE['email']) == '') {
                            <input id="bookmark-title"  type="text" name="title" placeholder="Обязательное полe*" class="form__input">
                         </div>
                         <div class="form__item">
-                        <textarea class="form__input textarea" name="text" type="text" id="bookmark-text"></textarea>
+                        <textarea class="form__input textarea__input textarea" name="text" type="text" id="bookmark-text"></textarea>
                         </div>
                         <button type="update" class="form__button btn enter lk-submit" id="bookmark-submit">Сохранить в закладках</button>
                      </div>

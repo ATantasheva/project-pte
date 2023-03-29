@@ -41,7 +41,7 @@ document.querySelector('.signup-submit').onclick = function (event) {
          alert('Пользователь с таким Email существует!');
       }
       else {
-         alert('Ошибка, повторите регистрацию позже!');
+         alert('Пользователь с таким Email существует!');
       }
    }
 
@@ -50,6 +50,7 @@ document.querySelector('.signup-submit').onclick = function (event) {
 //вход
 document.querySelector('.login-submit').onclick = function (event) {
    event.preventDefault();
+   console.log('enter');
    //получаем .value из переменных
    let email = document.querySelector('.login-email').value;
    let pass1 = document.querySelector('.login-password1').value;
@@ -80,9 +81,11 @@ document.querySelector('.login-submit').onclick = function (event) {
          d.setTime(d.getTime() + (30 * 60 * 1000)); //сутки 24*60*60*1000
          let expires = d.toUTCString();
          document.cookie = `email=${result.email}; expires=${expires}; path=/`;
+         
          location.href = "cabinet.php";
       }
    }
+ 
 }
 //=====================================================================================
 

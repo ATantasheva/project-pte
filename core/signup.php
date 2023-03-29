@@ -1,3 +1,4 @@
+
 <?php
 require_once 'config.php';
 
@@ -22,9 +23,10 @@ if($pass1 != $pass2) {
    echo 4;
    die;
 }
-//проверка уникальности email
-if(filter_var($email, FILTER_VALIDATE_EMAIL) !== false) {
-   echo 5;
+// проверка на правильность написания Email
+
+if(filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
+   echo 4;
    die;
 }
 
@@ -43,7 +45,8 @@ $sql = "INSERT INTO users (name, email, password, password2) VALUES ('".$name."'
 if ($conn->query($sql) === TRUE) {
     echo 1;
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+ //  echo 5; //проверка уникальности почты тк в БД индекс уникальности
+ echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
 $conn->close();

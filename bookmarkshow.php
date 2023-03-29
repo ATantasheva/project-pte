@@ -25,7 +25,7 @@ if(!isset($_COOKIE['email']) OR trim($_COOKIE['email']) == '') {
                <img src="./img/icons/arrow-up.png" alt='стрелка'>
             </a>
          </div>
-         <div class="button button__plus">
+         <!--<div class="button button__plus">
             <a href="#popup-bookmark" class="button-nav plus popup-link">
                <img src="./img/icons/plus.png" alt='добавить'>
             </a>
@@ -34,7 +34,8 @@ if(!isset($_COOKIE['email']) OR trim($_COOKIE['email']) == '') {
             <a href="bookmarkshow.php" class="button-nav bookmark">
                <img src="./img/icons/bookmark.png" alt='закладки'>
             </a>
-         </div>
+         </div>-->
+         
       </div>
    <?php include "#source/header.html" ?>
    <main class="main">

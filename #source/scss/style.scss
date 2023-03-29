@@ -171,7 +171,7 @@ $md4: 479.98; //мал смартфон
    @media(max-width: $md2+px) {
       border-right: 0px solid #cacaca;
       position: absolute;
-      left: -500%;
+      left: -1500%;
       top: 0;
       background-color: #cacaca;
       z-index: 2;
@@ -355,7 +355,7 @@ $md4: 479.98; //мал смартфон
    height: 2px;
    background: #000;
    position: absolute;
-   right: -12px;
+   right: -18px;
    top: 7px;
    transition: transform 0.3s ease 0s
 }
@@ -592,10 +592,81 @@ h3 {
    top: 2em;
 }
 
-mark {
-   background-color: yellow;
-   color: #000;
+//счетчик для поиска
+.counter {
+   display: none;
 }
+
+.counter.show {
+   position: fixed;
+   bottom: 20px;
+   right: 90px;
+   border-radius: 10px;
+   z-index: 10;
+   display: flex;
+   align-items: center;
+   user-select: none;
+   border: 2px solid #000;
+   background-color: rgb(145, 182, 145);
+   padding: 7px;
+}
+   .counter__button {
+      display: flex;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      border: 2px solid #000;
+      font-size: 30px;
+      padding: 10px;
+      justify-content: center;
+      cursor: pointer;
+      padding: 0px 7px;
+
+      &_min {}
+
+      &_plus {}
+   }
+
+
+.counter {
+
+   &__input {
+      padding-left: 0px;
+      width: 40px;
+
+      background-color: #fff;
+      text-align: center;
+
+      input {
+         border: none;
+      }
+   }
+}
+
+.counter__input input {
+   font-size: 24px;
+   display: block;
+   border: none;
+   text-align: center;
+}
+
+.search {
+
+   &__input {}
+}
+
+.search-count {
+   padding: 0px 8px;
+}
+
+.counter {
+
+   &__input {
+      display: none;
+   }
+}
+
+.search-counter {}
 
 /* Положение подсказки */
 

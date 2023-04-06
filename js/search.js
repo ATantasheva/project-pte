@@ -53,46 +53,21 @@ function FindOnPage(inputId) {
    let inputCount = document.querySelector('.search-counter');
    console.log(inputCount);
 
-
-
-
-
-
    const counterBtn = document.querySelectorAll('.counter__button'); //получаю кнопки + и -
    const counterBtnPlus = document.querySelector('.counter__button_plus'); //только кнопка плюс
    const counterBtnMin = document.querySelector('.counter__button_min'); //только кнопка плюс
 
-   /*
-   counterBtnPlus.addEventListener('click', function () { //вешаю клик
-      const p1 = document.querySelectorAll('[data-input]'); //получаю все желтые слова
-      console.log(p1);
-      for (let i; i <= p1.length; i++) {
-         i.classList.toggle('number');
-         let p2 = document.querySelector('.number');
-         console.log(p2);
-         p2.scrollIntoView()
-      }
-   
-      p1.forEach(
-         p2 => {
-            console.log(p2);
-            p2.classList.add('number'); //в консоли выходит кажд элемент но мне нужно повесить какой -то класс
-            //элементу чтобы сделать scrollIntoView() а потом этот класс убрать или вешать всем класс а прискролле убирать
-            p2.scrollIntoView(); //пролистывание есть но к последнему(про параметры я знаю)
-   
-         });
-   });
-   
-   */
-   // searchLinkArray[value].scrollItnoView()
+
 
    if (counters) {
       counters.forEach(counter => {
          let activeItemIndex = 0;
-         let value;
+         let value = document.querySelector('.counter__input').value;
+         value = Number(value);
          console.log(value);
          //inputCount.innerHTML = `${1} из ${searchLink.length}`;
          counterBtnMin.addEventListener('click', function () {
+            activeItemIndex = 0;
             activeItemIndex--;
             value = activeItemIndex;
             if (activeItemIndex <= 0) {
@@ -105,13 +80,16 @@ function FindOnPage(inputId) {
 
          })
          counterBtnPlus.addEventListener('click', function () {
-            activeItemIndex++;
+            activeItemIndex = 0;
             value = activeItemIndex;
             console.log(value);
-            if (activeItemIndex >= searchLink.length) {
-               activeItemIndex = searchLink.length;
-               value = activeItemIndex;
-               console.log(activeItemIndex);
+            if (activeItemIndex < searchLink.length) {
+               activeItemIndex++;
+               if (activeItemIndex >= searchLink.length) {
+                  activeItemIndex = searchLink.length;
+                  value = activeItemIndex;
+                  console.log(activeItemIndex);
+               }
             }
             searchLink[activeItemIndex].scrollIntoView({ behavior: 'smooth' });
 
@@ -121,38 +99,6 @@ function FindOnPage(inputId) {
       });
    };
 }
-/*
-if (counters) {
-   counters.forEach(counter => {
-      counter.addEventListener('click', e => {
-         const target = e.target;
-         let value = parseInt(target.closest('.counter').querySelector('input').value);
-         console.log(value); //этот инпут скрыт и дублируется в   inputCount.innerHTML
-         inputCount.innerHTML = `${value} из ${searchLinkArray.length}`;
-         if (target.closest('.counter__button')) {
 
-            if (value <= searchLinkArray.length) {
-               if (value >= searchLinkArray.length) {
-                  value = searchLinkArray.length;
-                  if (target.classList.contains('counter__button_min')) {
-                     value--;
-                  }
-               } else if (target.classList.contains('counter__button_plus')) {
-                  value++;
-
-               } else if (value <= 1) {
-                  value = 1;
-               } else if (target.classList.contains('counter__button_min')) {
-                  value--;
-
-               }
-               target.closest('.counter').querySelector('input').value = value;
-               inputCount.innerHTML = `${value} из ${searchLinkArray.length}`;
-            }
-         }
-      })
-   })
-}
-*/
 
 

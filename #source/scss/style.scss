@@ -610,22 +610,23 @@ h3 {
    background-color: rgb(145, 182, 145);
    padding: 7px;
 }
-   .counter__button {
-      display: flex;
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      border: 2px solid #000;
-      font-size: 30px;
-      padding: 10px;
-      justify-content: center;
-      cursor: pointer;
-      padding: 0px 7px;
 
-      &_min {}
+.counter__button {
+   display: flex;
+   border-radius: 50%;
+   width: 40px;
+   height: 40px;
+   border: 2px solid #000;
+   font-size: 30px;
+   padding: 10px;
+   justify-content: center;
+   cursor: pointer;
+   padding: 0px 7px;
 
-      &_plus {}
-   }
+   &_min {}
+
+   &_plus {}
+}
 
 
 .counter {
@@ -668,7 +669,75 @@ h3 {
 
 .search-counter {}
 
-/* Положение подсказки */
+//============================================================================================================
+/* Куки и политика */
+.cookie_notice {
+   display: none;
+   position: fixed;
+   z-index: 1000;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   text-align: center;
+   font-size: 14px;
+   line-height: 120%;
+   font-family: 'League Spartan', sans-serif;
+   color: #474646;
+   background: #fff;
+   margin-top: 20px;
+   padding: 10px 10px;
+   border-top: 4px solid #474646;
+   margin-top: 50px;
+}
+
+/* Оформление кнопок */
+
+.cookie_btn {
+   display: inline-block;
+   margin: 10px 6px 4px 6px;
+   text-decoration: none;
+   position: relative;
+   border-radius: 10px;
+   box-shadow: 0 2px 0 #7d7c7c;
+   font-size: 13px;
+   padding: 6px 12px;
+   color: #474646;
+   font-weight: 700;
+   text-transform: uppercase;
+   background: #E0E0E0;
+   border: 2px solid #474646;
+}
+
+.cookie_btn:hover {
+   color: #2B2B2B;
+   background: rgb(145, 182, 145);
+}
+
+.cookie_btn:after,
+.cookie_btn:before {
+   position: absolute;
+   height: 2px;
+   left: 50%;
+   background: #474646;
+   bottom: -6px;
+   content: "";
+   transition: all 350ms ease-in-out;
+   width: 0;
+}
+
+.cookie_btn:before {
+   top: -6px;
+}
+
+.cookie_btn:hover:after,
+.cookie_btn:hover:before {
+   width: 100%;
+   left: 0;
+}
+
+.bookmark-none.none {
+   display: none;
+}
 
 //</ОСНОВНОЙ БЛОК>====================================================================================================
 
@@ -676,6 +745,6 @@ h3 {
 //@import "burger.scss"; //стили меню-бургер
 //@import "forms.scss"; //кнопки чекбоксы поля 
 @import "popup.scss"; //стили окон - поп-ап
-@import "ui.scss"; // сборка одинаковых классов вписываем сюда!
-@import "adaptive.scss"; // подкл адаптива после сетки
+//@import "ui.scss"; // сборка одинаковых классов вписываем сюда!
+//@import "adaptive.scss"; // подкл адаптива после сетки
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>===================================================================================================

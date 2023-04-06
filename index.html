@@ -26,7 +26,8 @@
                      <div class="block__popup">
                         <input class="input form__input login-email" type="text" name="email"
                            placeholder="Введите адрес электронной почты">
-                        <input class="input form__input login-password1" name="password1" type="password" placeholder="Введите пароль">
+                        <input class="input form__input login-password1" name="password1" type="password"
+                           placeholder="Введите пароль">
                         <button class="btn enter login-submit">Войти</button>
 
                      </div>
@@ -53,7 +54,8 @@
                         </div>
                         <div class="form__item">
                            <label for="formPassword1" class="form__label">Придумайте пароль*:</label>
-                           <input id="formPassword1" type="password" name="password1" class="form__input _req password signup-password1">
+                           <input id="formPassword1" type="password" name="password1"
+                              class="form__input _req password signup-password1">
                         </div>
                         <div class="form__item">
                            <label for="formPassword2" class="form__label">Повторите пароль*:</label>
@@ -108,7 +110,7 @@
                <div class="lk">
                   <div name="userEmail" class="lk-greeting"></div>
                   <button class="logout btn lk__btn">Выход</button>
-                  <button href="#formUpdate" class="popup-link profile btn lk__btn">Мой профиль</button>
+                  <button href="#formUpdate" class="popup-link profile btn lk__btn bookmark-none">Мой профиль</button>
                </div>
             </nav>
          </div>
@@ -199,8 +201,10 @@
                         <div data-counter class="counter">
                            <div class="counter__button counter__button_min">-</div>
                            <div class="search-count">
-                              <input class="counter__input" value="1" type="text" type="text" disabled>
-                              <div class="search-counter"></div>
+
+                              <div class="search-counter">
+                                 <input class="counter__input" value="1" type="text" disabled>
+                              </div>
                            </div>
                            <div class="counter__button counter__button_plus">+</div>
                         </div>
@@ -299,9 +303,9 @@
                   </section>
                   <section class="order__main"> <!--оболочка всего птэ-->
                      <div class="order__block">
-                        <h2>ПРАВИЛА ТЕХНИЧЕСКОЙ ЭКСПЛУАТАЦИИ ЖЕЛЕЗНЫХ ДОРОГ РОССИЙСКОЙ ФЕДЕРАЦИИ
+                        <h2 id="pte-1">ПРАВИЛА ТЕХНИЧЕСКОЙ ЭКСПЛУАТАЦИИ ЖЕЛЕЗНЫХ ДОРОГ РОССИЙСКОЙ ФЕДЕРАЦИИ
                         </h2>
-                        <h3 id="pte-1" class="order__title">I. Общие положения </h3>
+                        <h3 class="order__title">I. Общие положения </h3>
                         <div class="order__text">
                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio ipsa reprehenderit
                               laboriosam similique quaerat debitis, ab fugiat ipsum placeat sunt sapiente velit
@@ -629,7 +633,8 @@
                                  сигналов на железнодорожном транспорте приведены в Инструкции по сигнализации на
                                  железнодорожном транспорте Российской Федерации, содержащейся в приложении N 1 к
                                  Правилам.</p>
-                           <p>4. Правила приема, отправления и пропуска поездов <9>, выполнения маневровой работы и
+                           <p id="pte-2">4. Правила приема, отправления и пропуска поездов <9>, выполнения маневровой
+                                 работы и
                                  закрепления железнодорожного подвижного состава, правила приема и отправления поездов в
                                  условиях выполнения ремонтно-строительных работ, порядок назначения поездов и
                                  выполнения
@@ -637,7 +642,7 @@
                                  маневровой работы на железнодорожном транспорте Российской Федерации, содержащейся в
                                  приложении N 2 к Правилам.</p>
                         </div>
-                        <h3 id="pte-2" class="order__title">II. Обязанности работников железнодорожного транспорта
+                        <h3 class="order__title">II. Обязанности работников железнодорожного транспорта
                         </h3>
                         <div class="order__text">
                            <p>5. Работники железнодорожного транспорта в соответствии со своими должностными
@@ -981,7 +986,9 @@
             </section>
          </div>
       </div>
-      <script src="js/search.js"></script>
+      <!--      <script src="js/search.js"></script>-->
+
+
 </body>
 
 </html><footer>
@@ -989,16 +996,36 @@
       <div class="footer-body">
          <div class="logo">Логотип</div>
          <ul class="footer__social">
-            <li class="footer__link"> <a href="https://www.rzd.ru/"><img class="footer__img" target="_blank" src="./img/icons/rzd-icons.png"
-                     alt="сайт РЖД"></a></li>
-            <li class="footer__link"> <a href="https://rosprofzhel.ru/"><img class="footer__img" target="_blank" src="./img/icons/rosprof.svg"
-                     alt="сайт Роспрофжел"></a></li>
-            <li class="footer__link"> <a href="https://gudok.ru/"><img class="footer__img gudok" target="_blank" src="./img/icons/gudok.png"
-                     alt="портал гудок"></a></li>
+            <li class="footer__link"> <a href="https://www.rzd.ru/"><img class="footer__img" target="_blank"
+                     src="./img/icons/rzd-icons.png" alt="сайт РЖД"></a></li>
+            <li class="footer__link"> <a href="https://rosprofzhel.ru/"><img class="footer__img" target="_blank"
+                     src="./img/icons/rosprof.svg" alt="сайт Роспрофжел"></a></li>
+            <li class="footer__link"> <a href="https://gudok.ru/"><img class="footer__img gudok" target="_blank"
+                     src="./img/icons/gudok.png" alt="портал гудок"></a></li>
+         </ul>
+
+      </div>
+      <div class="footer-cookie">
+         <ul class="footer-menu__items">
+            <li class="footer-menu__item"><a href="index-privacy.html" target="_blank"
+                  class="footer-menu__link">Политика конфиденциальности</a></li>
+            <li class="footer-menu__item"><a href="#" class="footer-menu__link">Cookie</a></li>
          </ul>
       </div>
    </div>
-</footer>   </div>
+</footer>
+      <div class="cookie_notice">
+         Этот сайт использует файлы cookies и сервисы сбора технических данных посетителей для обеспечения
+         работоспособности и улучшения качества обслуживания. Продолжая
+         использовать этот сайт, вы автоматически соглашаетесь с использованием данных технологий.
+         <div>
+            <a class="cookie_btn" id="cookie_close" href="#close">Согласиться</a>
+            <a class="cookie_btn" href="/index-privacy.html" target="_blank">Политика
+               конфиденциальности</a>
+         </div>
+      </div>
+
+   </div>
 
 
 
